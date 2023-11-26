@@ -1,13 +1,12 @@
 <div class="main">
-  <h1>Angular Framework</h1>
- <input
-  #newItem
-  placeholder="Message to Display"
-  (keyup.enter)="addItem(newItem.value); newItem.value = ''"
-  class="lg-text-input"
+<input type="text"
+ #box
+placeholder="Message to Display"
+name="name"
  id="addItemInput" />
-  <button class="btn-primary" (click)="addItem(newItem.value)">Display Message</button>
+
+  <button class="btn-primary" (click)="getValue(box.value)">Display Message</button>
   <ul>
-  <h2 *ngFor="let item of items">{{item.description}}</h2>
+  <h2>{{displayVal}}</h2>
   </ul>
  </div>

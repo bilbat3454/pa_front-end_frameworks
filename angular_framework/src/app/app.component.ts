@@ -7,24 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular_framework';
+  displayVal= "Hello World";
+  displayVal2= '';
 
-  filter: "all" | "active" | "done" = "all";
-  allItems = [
-  { description: "Hello World", done: false},
-  
-  ];
-  get items() {
-    if (this.filter === "all") {
-    return this.allItems;
+  getValue(val:string)
+  {
+    console.warn(val)
+    this.displayVal= val
   }
-  return this.allItems.filter((item) =>
-  this.filter === "done" ? item.done : !item.done
-  );
-  }
-  addItem(description: string) {
-  this.allItems.unshift({
-  description,
-  done: false
-  });
- }
 }
+
